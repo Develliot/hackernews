@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders visible 1`] = `
+<styles__HeaderWrapper
+  visible={true}
+>
+  <styles__HeaderInner>
+    <Typography__H2
+      color="white"
+    >
+      Showcase
+    </Typography__H2>
+    <Layout__VerticalSpacer
+      size="medium"
+    />
+    <nav>
+      <styles__Links>
+        <HeaderNavLink
+          exact={true}
+          title="Home"
+          to="/showcase/"
+        />
+        <HeaderNavLink
+          title="Design System"
+          to="/showcase/designSystem"
+        />
+        <HeaderNavLink
+          title="Using APIs"
+          to="/showcase/usingAPIs"
+        />
+      </styles__Links>
+    </nav>
+  </styles__HeaderInner>
+</styles__HeaderWrapper>
+`;
