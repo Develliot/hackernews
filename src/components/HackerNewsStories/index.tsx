@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
-// import { UserCard } from 'src/components/UserCard';
+import HackerNewsStoryContainer from 'src/containers/HackerNewsStoryContainer';
+
 import { ErrorMessage } from 'src/components/ErrorMessage';
 import { StoryGrid } from './styles';
 
@@ -34,9 +35,11 @@ export const HackerNewsStories: FunctionComponent<Props> = ({
                 </StoryGrid>
             ) : (
                 <StoryGrid>
-                    {storyIds.map((storyId: number, index: number) => (
-                        <p key={storyId}>{storyId} </p>
-                        // <StoryCard key={storyId} storyId={storyId} />
+                    {storyIds.slice(0, 24).map((storyId: number) => (
+                        <HackerNewsStoryContainer
+                            key={storyId}
+                            storyId={storyId}
+                        />
                     ))}
                 </StoryGrid>
             )}

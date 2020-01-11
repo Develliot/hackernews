@@ -1,19 +1,23 @@
-import React, { useEffect, useState, FunctionComponent } from 'react';
+import React, { useEffect, FunctionComponent } from 'react';
 import { useGetRequest } from 'src/hooks/useGetRequest';
 import { HackerNewsStories } from 'src/components/HackerNewsStories';
 
-const HACKER_NEWS_TOP_500 =
-    'https://hacker-news.firebaseio.com/v0/topstories.json';
+const HACKER_NEWS_STORIES = 'https://hacker-news.firebaseio.com/v0/';
 
-export const UsersContainer: FunctionComponent = () => {
-    const url = HACKER_NEWS_TOP_500;
+type Props = {
+    storyType: 'topstories' | 'newstories' | 'beststories';
+};
+
+export const HackerNewsStoriesContainer: FunctionComponent<Props> = ({
+    storyType,
+}) => {
+    const url = `${HACKER_NEWS_STORIES}${storyType}.json`;
     const [storyIds, isLoading, isError, setUrl] = useGetRequest(url, []);
 
+    // run once
     useEffect(() => {
-        if (!storyIds.length) {
-            setUrl(url);
-        }
-    }, [setUrl, storyIds]);
+        setUrl(url);
+    }, [setUrl, url]);
 
     const retry = (): void => {
         setUrl(url);
@@ -29,4 +33,4 @@ export const UsersContainer: FunctionComponent = () => {
     );
 };
 
-export default UsersContainer;
+export default HackerNewsStoriesContainer;

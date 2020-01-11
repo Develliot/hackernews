@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { H1, Paragraph } from 'src/components/Typography';
+import { H1 } from 'src/components/Typography';
 import { PageWrapper, PageContent } from 'src/components/Layout';
 import {
     ContentWrapper,
     VerticalSpacer,
     ColorBlock,
 } from 'src/components/Layout';
-import HackerNews from 'src/containers/HackerNews';
+import HackerNewsStoriesContainer from 'src/containers/HackerNewsStoriesContainer';
 
 export const Home = () => {
     return (
@@ -18,7 +18,7 @@ export const Home = () => {
                         <VerticalSpacer size='extraExtraLarge' />
                         <H1>Hacker News</H1>
                         <VerticalSpacer size='large' />
-                        <HackerNews />
+                        <HackerNewsStoriesContainer storyType='topstories' />
                     </ContentWrapper>
                 </ColorBlock>
             </PageContent>
