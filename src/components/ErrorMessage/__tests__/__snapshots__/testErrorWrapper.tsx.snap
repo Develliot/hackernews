@@ -23,7 +23,7 @@ exports[`renders the with a retry button 1`] = `
     size="medium"
   />
   <Link
-    to="/showcase/"
+    to="/hackernews/"
   >
     <Button
       color="darkGrey"
@@ -49,7 +49,7 @@ exports[`renders the with an error message 1`] = `
     size="large"
   />
   <Link
-    to="/showcase/"
+    to="/hackernews/"
   >
     <Button
       color="darkGrey"
