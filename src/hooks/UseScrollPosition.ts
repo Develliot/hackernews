@@ -20,11 +20,21 @@ function getScrollPosition({
     const target = element ? element.current : document.body;
     const position = target
         ? target.getBoundingClientRect()
-        : { top: 0, left: 0 };
+        : { top: 0, left: 0, height: 0, width: 0 };
 
     return useWindow
-        ? { x: window.scrollX, y: window.scrollY }
-        : { x: position.left, y: position.top };
+        ? {
+              x: window.scrollX,
+              y: window.scrollY,
+              width: window.innerWidth,
+              height: window.innerHeight,
+          }
+        : {
+              x: position.left,
+              y: position.top,
+              width: position.width,
+              height: position.height,
+          };
 }
 
 export function useScrollPosition(
