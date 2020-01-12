@@ -1,4 +1,4 @@
-import React, { useEffect, FunctionComponent } from 'react';
+import React, { useEffect, FunctionComponent, memo } from 'react';
 import { useGetRequest } from 'src/hooks/useGetRequest';
 import { HackerNewsStoryCard } from 'src/components/HackerNewsStoryCard';
 
@@ -20,7 +20,7 @@ type Props = {
     storyId: number;
 };
 
-export const HackerNewsStoriesContainer: FunctionComponent<Props> = ({
+export const HackerNewsStoryContainer: FunctionComponent<Props> = ({
     storyId,
 }) => {
     const url = `${HACKER_NEWS_ITEM_URL}${storyId}.json`;
@@ -29,7 +29,7 @@ export const HackerNewsStoriesContainer: FunctionComponent<Props> = ({
     // run once
     useEffect(() => {
         setUrl(url);
-    }, [setUrl, url]);
+    }, [setUrl]);
 
     const retry = (): void => {
         setUrl(url);
@@ -45,4 +45,4 @@ export const HackerNewsStoriesContainer: FunctionComponent<Props> = ({
     );
 };
 
-export default HackerNewsStoriesContainer;
+export default memo(HackerNewsStoryContainer);
