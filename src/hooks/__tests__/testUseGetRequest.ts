@@ -4,7 +4,7 @@ import MockAdapter from 'axios-mock-adapter';
 
 import { useGetRequest } from '../useGetRequest';
 
-test('useFetch performs GET request', async () => {
+test('useGetRequest performs GET request', async () => {
     const initialValue = [];
     const mock = new MockAdapter(axios);
 
@@ -25,7 +25,7 @@ test('useFetch performs GET request', async () => {
     expect(result.current.isLoading).toBeFalsy();
 });
 
-test('useFetch performs throws an error', async () => {
+test('useGetRequest performs throws an error', async () => {
     const initialValue = [];
     const mock = new MockAdapter(axios);
 
