@@ -3,12 +3,13 @@ import { H4, Span, Paragraph } from 'src/components/Typography';
 
 export const StoryCardWrapper = styled.article`
     background-color: ${({
+        selected,
         theme: {
-            colors: { blue },
+            colors: { blue, pink },
         },
-    }) => blue};
+    }) => `${selected ? pink : blue}`};
     border-radius: 0.25rem;
-    transition: all 1s ease;
+    transition: background-color 0.3s ease;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
