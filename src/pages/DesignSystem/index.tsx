@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { colors } from 'src/theme';
-import { camelCaseToCaptilalisedCase } from 'src/utils/StringUtils';
+import { camelCaseToCapitalisedCase } from 'src/utils/StringUtils';
 import {
     PageWrapper,
     PageContent,
@@ -41,7 +41,7 @@ export const DesignSystem = () => {
                                         <ColorTile color={colors[`${color}`]}>
                                             <ColorLabelWrapper>
                                                 <Span>
-                                                    {camelCaseToCaptilalisedCase(
+                                                    {camelCaseToCapitalisedCase(
                                                         color
                                                     )}
                                                     :

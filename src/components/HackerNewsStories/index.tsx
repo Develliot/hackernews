@@ -1,7 +1,7 @@
 import React, { useState, useRef, FunctionComponent } from 'react';
 
 import { limitNumberWithinRange } from 'src/utils/NumberUtils';
-import { useScrollPosition } from 'src/hooks/UseScrollPosition';
+import { useScrollPosition } from 'src/hooks/useScrollPosition';
 import HackerNewsStoryContainer from 'src/containers/HackerNewsStoryContainer';
 import { ErrorMessage } from 'src/components/ErrorMessage';
 

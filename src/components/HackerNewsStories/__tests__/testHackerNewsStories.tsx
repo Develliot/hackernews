@@ -6,9 +6,6 @@ import HackerNewsStories, {
     checkForScrollToBottom,
 } from '../';
 import HackerNewsStoryContainer from 'src/containers/HackerNewsStoryContainer';
-import UseScrollPosition from 'src/hooks/UseScrollPosition';
-
-jest.mock('src/hooks/UseScrollPosition');
 
 describe('HackerNewsStoryContainer', () => {
     const mockProps = {
@@ -17,10 +14,6 @@ describe('HackerNewsStoryContainer', () => {
         storyIds: Array.from(Array(500).keys()),
         retry: () => {},
     };
-
-    beforeEach(() => {
-        (UseScrollPosition as jest.Mock<any>).mockClear();
-    });
 
     it('renders correctly when loading', () => {
         const wrapper: ShallowWrapper = shallow(

@@ -29,7 +29,7 @@ export const HackerNewsStoryContainer: FunctionComponent<Props> = ({
     // run once
     useEffect(() => {
         setUrl(url);
-    }, [setUrl]);
+    }, [setUrl, url]);
 
     const retry = (): void => {
         setUrl(url);
