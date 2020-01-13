@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, memo } from 'react';
 
 import { ErrorMessage } from 'src/components/ErrorMessage';
 import { StoryCardWrapper } from './styles';
@@ -31,11 +31,12 @@ export const HackerNewsStoryCard: FunctionComponent<Props> = ({
                     {/* TODO: loading state */}
                     {/* <StoryCardLoading /> */}
                 </>
-            ) : (
-                story && <StoryCardWrapper>{story.title}</StoryCardWrapper>
-            )}
+            ) : story ? (
+                <StoryCardWrapper>{story.title}</StoryCardWrapper>
+            ) : null}
         </>
     );
 };
 
-export default HackerNewsStoryCard;
+// this is going is potentially re-rendered with same props with infinite scroll so keep it in memory
+export default memo(HackerNewsStoryCard);

@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HackerNewsStoryContainer renders correctly when loading 1`] = `
+<Fragment>
+  <styled.div>
+    <span>
+      Loading stories
+    </span>
+  </styled.div>
+</Fragment>
+`;
+
+exports[`HackerNewsStoryContainer renders correctly with children 1`] = `
+<Fragment>
+  <styled.div>
+    <Memo(HackerNewsStoryContainer)
+      key="0"
+      storyId={0}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="1"
+      storyId={1}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="2"
+      storyId={2}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="3"
+      storyId={3}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="4"
+      storyId={4}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="5"
+      storyId={5}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="6"
+      storyId={6}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="7"
+      storyId={7}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="8"
+      storyId={8}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="9"
+      storyId={9}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="10"
+      storyId={10}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="11"
+      storyId={11}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="12"
+      storyId={12}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="13"
+      storyId={13}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="14"
+      storyId={14}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="15"
+      storyId={15}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="16"
+      storyId={16}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="17"
+      storyId={17}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="18"
+      storyId={18}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="19"
+      storyId={19}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="20"
+      storyId={20}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="21"
+      storyId={21}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="22"
+      storyId={22}
+    />
+    <Memo(HackerNewsStoryContainer)
+      key="23"
+      storyId={23}
+    />
+  </styled.div>
+</Fragment>
+`;
+
+exports[`HackerNewsStoryContainer renders correctly with error 1`] = `
+<Fragment>
+  <ErrorMessage
+    errorMessage="Unable to retrieve stories"
+    retry={[Function]}
+  />
+</Fragment>
+`;

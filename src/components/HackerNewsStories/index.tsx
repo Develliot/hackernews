@@ -1,8 +1,10 @@
 import React, { useState, useRef, FunctionComponent } from 'react';
 
+import { limitNumberWithinRange } from 'src/utils/NumberUtils';
 import { useScrollPosition } from 'src/hooks/UseScrollPosition';
 import HackerNewsStoryContainer from 'src/containers/HackerNewsStoryContainer';
 import { ErrorMessage } from 'src/components/ErrorMessage';
+
 import { StoryGrid } from './styles';
 
 export const MAX_STORIES = 500;
@@ -15,6 +17,14 @@ type Props = {
     retry: () => void;
 };
 
+export const checkForScrollToBottom = (
+    y: number,
+    height: number,
+    windowHeight: number
+) => {
+    return y + height <= windowHeight;
+};
+
 export const HackerNewsStories: FunctionComponent<Props> = ({
     isError,
     isLoading,
@@ -25,6 +35,7 @@ export const HackerNewsStories: FunctionComponent<Props> = ({
     const [storyCount, setStoryCount] = useState(STORIES_PER_PAGE);
     const isBrowser = typeof window !== `undefined`;
 
+    // infinite scroll
     useScrollPosition(
         ({
             currPos,
@@ -40,14 +51,20 @@ export const HackerNewsStories: FunctionComponent<Props> = ({
                 return null;
             }
 
-            const loadMore = currPos.y + currPos.height <= window.innerHeight;
+            const isAtBottom = checkForScrollToBottom(
+                currPos.y,
+                currPos.height,
+                window.innerHeight
+            );
 
-            if (loadMore) {
-                const calculatedCount = storyCount + STORIES_PER_PAGE;
-                const limitedCount =
-                    calculatedCount > MAX_STORIES
-                        ? MAX_STORIES
-                        : calculatedCount;
+            // if scrolled to bottom increment the story count
+            if (isAtBottom) {
+                const incrementedStoryCount = storyCount + STORIES_PER_PAGE;
+                const limitedCount = limitNumberWithinRange(
+                    incrementedStoryCount,
+                    0,
+                    MAX_STORIES
+                );
                 setStoryCount(limitedCount);
             }
         },
@@ -67,7 +84,7 @@ export const HackerNewsStories: FunctionComponent<Props> = ({
             ) : isLoading ? (
                 <StoryGrid>
                     <span>Loading stories</span>
-                    {/* TODO: loading state */}
+                    {/* TODO: proper loading state */}
                     {/* {[...Array(24)].map((e, i) => (
                         <StoryCardLoading />
                     ))} */}

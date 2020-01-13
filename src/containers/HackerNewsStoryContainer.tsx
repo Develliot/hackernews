@@ -45,4 +45,5 @@ export const HackerNewsStoryContainer: FunctionComponent<Props> = ({
     );
 };
 
+// this is going is potentially re-rendered with same props with infinite scroll so keep it in memory
 export default memo(HackerNewsStoryContainer);
