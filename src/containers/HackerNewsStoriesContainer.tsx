@@ -12,8 +12,8 @@ export const HackerNewsStoriesContainer: FunctionComponent<Props> = ({
     storyType,
 }) => {
     const url = `${HACKER_NEWS_STORIES}${storyType}.json`;
-    const [storyIds, isLoading, isError, setUrl] = useGetRequest(url, []);
-
+    const { data, isLoading, isError, setUrl } = useGetRequest(url, []);
+    const storyIds = data;
     // run once
     useEffect(() => {
         setUrl(url);
