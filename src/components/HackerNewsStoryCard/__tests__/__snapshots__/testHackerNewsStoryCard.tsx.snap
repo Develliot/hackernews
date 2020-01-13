@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HackerNewsStoryCard renders correctly when loading 1`] = `
+<Fragment>
+  <span>
+    Loading story
+  </span>
+</Fragment>
+`;
+
+exports[`HackerNewsStoryCard renders correctly with error 1`] = `
+<Fragment>
+  <ErrorMessage
+    errorMessage="Unable to retrieve story"
+    retry={[Function]}
+  />
+</Fragment>
+`;
+
+exports[`HackerNewsStoryCard renders correctly with story 1`] = `
+<Fragment>
+  <styled.article
+    onClick={[Function]}
+    selected={false}
+  >
+    <styled.div>
+      <Typography__Paragraph
+        color="white"
+        textAlign="center"
+      >
+        Score
+      </Typography__Paragraph>
+      <Typography__Paragraph
+        color="white"
+        textAlign="center"
+      >
+        34
+      </Typography__Paragraph>
+    </styled.div>
+    <styled.div>
+      <styled.a
+        href="http://www.blah.com"
+        target="_blank"
+      >
+        <Styled(Typography__H4)
+          color="white"
+        >
+          title text
+        </Styled(Typography__H4)>
+      </styled.a>
+      <styled.div>
+        <Styled(Typography__Paragraph)
+          color="white"
+        >
+          <Typography__Span
+            color="white"
+          >
+            By 
+          </Typography__Span>
+          <Styled(Typography__Span)
+            bold={true}
+            color="white"
+          >
+            string
+          </Styled(Typography__Span)>
+        </Styled(Typography__Paragraph)>
+      </styled.div>
+    </styled.div>
+  </styled.article>
+</Fragment>
+`;
