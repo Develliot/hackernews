@@ -78,3 +78,18 @@ export const H3 = styled.h3`
     text-overflow: ellipsis;
     overflow: hidden;
 `;
+
+export const H4 = styled.h4`
+    ${(props: BaseTextProps) => baseText(props)}
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.03rem;
+    font-size: ${({
+        fontSize,
+        theme: {
+            fontSizes: { medium },
+        },
+    }: any) => (fontSize ? fontSize : medium)};
+    text-overflow: ellipsis;
+    overflow: hidden;
+`;
