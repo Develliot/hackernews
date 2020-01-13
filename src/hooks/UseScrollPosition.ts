@@ -72,3 +72,5 @@ export function useScrollPosition(
         return () => window.removeEventListener('scroll', handleScroll);
     }, deps);
 }
+
+export default useScrollPosition;
