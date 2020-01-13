@@ -1,5 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { H4, Span, Paragraph } from 'src/components/Typography';
+
+const grow = keyframes`
+  from {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+    to {
+        transform: scale(1, 1);
+    }
+`;
 
 export const StoryCardWrapper = styled.article`
     background-color: ${({
@@ -19,6 +29,8 @@ export const StoryCardWrapper = styled.article`
         selected ? `span 2` : `span 1`};
     grid-row: ${({ selected }: { selected: boolean }) =>
         selected ? `span 2` : `span 1`};
+
+    animation: ${grow} 1s normal forwards cubic-bezier(0.62, 0.28, 0.23, 0.99);
 
     &:hover {
         cursor: pointer;
