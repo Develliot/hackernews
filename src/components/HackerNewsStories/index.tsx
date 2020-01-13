@@ -5,8 +5,8 @@ import HackerNewsStoryContainer from 'src/containers/HackerNewsStoryContainer';
 import { ErrorMessage } from 'src/components/ErrorMessage';
 import { StoryGrid } from './styles';
 
-const MAX_STORIES = 500;
-const STORIES_PER_PAGE = 24;
+export const MAX_STORIES = 500;
+export const STORIES_PER_PAGE = 24;
 
 type Props = {
     isError: boolean;
